@@ -9,6 +9,7 @@ action "install" {
 }
 
 action "test" {
+  needs = "install"
   uses = "actions/npm@master"
   args = "test"
 }
