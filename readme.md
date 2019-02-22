@@ -13,6 +13,7 @@ This is a good default configuration of [winston](https://github.com/winstonjs/w
 `createLogger(logLevel, metadata, stderrLevels) => Winston.Logger`
 
 Params
+
 | Param | Type | Description | Default |
 |-|-|-|-|
 | logLevel | `String` | The minimum severity level to log. [See Log Levels](#log-levels) | `info`
