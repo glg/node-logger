@@ -23,7 +23,7 @@ Params
 ```javascript
 const { createLogger } = require('node-logger');
 
-logger = createLogger('info', { service: 'my-service', component: 'index.js' });
+const logger = createLogger('info', { service: 'my-service', component: 'index.js' });
 
 logger.info('Some message');
 // info: Some message {"service":"my-service","component":"index.js","timestamp":"2019-02-22 15:41:34"}
