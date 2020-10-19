@@ -2,6 +2,7 @@
   "name": "node-logger",
   "version": "1.0.0",
   "description": "Basic logger built on Winston",
+  "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
