@@ -17,9 +17,9 @@ const levels = validLogLevels.reduce((result, level, index) => {
 }, {});
 
 module.exports = {
-    createLogger: (logLevel='info', metadata={}, stderrLevels=[]) => {
+  createLogger: (logLevel='info', metadata={}, stderrLevels=[], { format } = {}) => {
         return winston.createLogger({
-            format: winston.format.combine(
+            format: format || winston.format.combine(
                 winston.format.timestamp({
                     format: 'YYYY-MM-DD HH:mm:ss'
                 }),
@@ -38,6 +38,7 @@ module.exports = {
             ]
         });
     },
+    format: winston.format,
     levels,
     validLogLevels
 };
