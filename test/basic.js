@@ -1,5 +1,3 @@
-const assert = require('chai').assert;
-
 const logger = require('..');
 
 describe('logger', () => {
@@ -25,5 +23,42 @@ describe('logger', () => {
 
   it('should export validLogLevels', () => {
     assert.isArray(logger.validLogLevels);
+  });
+
+  describe('when instantiated', () => {
+    let instance;
+    let metadata;
+    let fake;
+
+    beforeEach(() => {
+      const now = Date.now();
+
+      metadata = {
+        service: `catpants-${now}`,
+        now,
+      };
+
+      fake = sinon.replace(console._stdout, 'write', sinon.fake());
+    });
+
+    afterEach(sinon.restore);
+
+    it('should support replacing the log formatter', () => {
+      const expected = { deeply: { nested: 'json', here: true } };
+      instance = logger.createLogger('info', metadata, [], { format: logger.format.json() });
+
+      instance.info(expected);
+
+      // allow mocha to write to the console again
+      sinon.restore();
+
+      assert.calledOnce(fake);
+      assert.lengthOf(fake.firstCall.args, 1);
+
+      assert.deepEqual(
+        JSON.parse(fake.firstCall.firstArg),
+        Object.assign({ level: 'info', message: expected }, metadata),
+      );
+    });
   });
 });

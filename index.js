@@ -17,27 +17,28 @@ const levels = validLogLevels.reduce((result, level, index) => {
 }, {});
 
 module.exports = {
-    createLogger: (logLevel='info', metadata={}, stderrLevels=[]) => {
-        return winston.createLogger({
-            format: winston.format.combine(
-                winston.format.timestamp({
-                    format: 'YYYY-MM-DD HH:mm:ss'
-                }),
-                winston.format.errors({ stack: true }),
-                winston.format.splat(),
-                winston.format.simple()
-            ),
-            defaultMeta: metadata,
-            level: logLevel,
-            levels,
-            transports: [
-                new winston.transports.Console({
-                    handleExceptions: true,
-                    stderrLevels,
-                })
-            ]
-        });
-    },
-    levels,
-    validLogLevels
+  createLogger: (logLevel='info', metadata={}, stderrLevels=[], { format } = {}) => {
+    return winston.createLogger({
+      format: format || winston.format.combine(
+        winston.format.timestamp({
+          format: 'YYYY-MM-DD HH:mm:ss'
+        }),
+        winston.format.errors({ stack: true }),
+        winston.format.splat(),
+        winston.format.simple()
+      ),
+      defaultMeta: metadata,
+      level: logLevel,
+      levels,
+      transports: [
+        new winston.transports.Console({
+          handleExceptions: true,
+          stderrLevels,
+        })
+      ]
+    });
+  },
+  format: winston.format,
+  levels,
+  validLogLevels
 };
