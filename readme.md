@@ -39,7 +39,7 @@ const { createLogger, format } = require('node-logger');
 
 const logger = createLogger(
   'info', 
-  { service: 'catpant', sha: process.env.GITHUB_SHA }, 
+  { service: 'catpants', sha: process.env.GITHUB_SHA }, 
   [], 
   { format: format.json() },
 );
