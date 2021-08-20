@@ -32,6 +32,25 @@ logger.error('Some other message');
 // error: Some other message {"service":"my-service","component":"index.js","timestamp":"2019-02-22 15:41:34"}
 ```
 
+### Logging JSON (custom format)
+
+```js
+const { createLogger, format } = require('node-logger');
+
+const logger = createLogger(
+  'info', 
+  { service: 'catpant', sha: process.env.GITHUB_SHA }, 
+  [], 
+  { format: format.json() },
+);
+
+logger.log({ 
+  level: 'warn',
+  message: 'mayday',
+});
+// {"level":"info","message":"mayday","service":"catpants","sha":"<github-sha-value>"}
+```
+
 ## Log Levels
 
 This supports the following log levels, in order of decreasing severity:
