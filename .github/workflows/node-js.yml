@@ -1,0 +1,17 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: npm install, lint, and test
+        run: |
+          npm ci
+          npm run lint --if-present
+          npm test
