@@ -10,9 +10,9 @@ const validLogLevels = [
   'info',
   'debug',
 ];
+
 const levels = validLogLevels.reduce((result, level, index) => {
   result[level] = index;
-
   return result;
 }, {});
 
