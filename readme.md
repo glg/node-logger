@@ -4,7 +4,7 @@ This is a good default configuration of [winston](https://github.com/winstonjs/w
 
 ## Install
 
-`npm install github:glg/node-logger`
+To install in your project, do `npm install github:glg/node-logger`.
 
 ## Usage
 
@@ -67,3 +67,7 @@ This supports the following log levels, in order of decreasing severity:
 If you create a logger with the log level `info` (default), it will log all outputs that are at least an `info` level severity, which would be everything except `debug`.
 
 If you create a logger with the log level `error`, it will only log messages that are `error`, `crit`, `alert`, or `emerg`.
+
+## Local development
+
+To work on this locally, clone it and run `npm install`. You should be good to go.
