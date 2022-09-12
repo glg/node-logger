@@ -71,3 +71,5 @@ If you create a logger with the log level `error`, it will only log messages tha
 ## Local development
 
 To work on this locally, clone it and run `npm install`. You should be good to go.
+
+Be sure to read CONTRIBUTING.md for guidelines on contributing to this repo.
