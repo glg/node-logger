@@ -4,7 +4,7 @@ This is a good default configuration of [winston](https://github.com/winstonjs/w
 
 ## Install
 
-`npm install github:glg/node-logger`
+To install in your project, do `npm install github:glg/node-logger`.
 
 ## Usage
 
@@ -14,11 +14,11 @@ This is a good default configuration of [winston](https://github.com/winstonjs/w
 
 Params
 
-| Param | Type | Description | Default |
-|-|-|-|-|
-| logLevel | `String` | The minimum severity level to log. [See Log Levels](#log-levels) | `info`
-| metadata | `Object` | Any extra data you want included in your logging, like what service this is | `{}`
-| stderrLevels | `Array` | Which log levels should be logged to `stderr` instead of `stdout` | `[]`
+| Param        | Type     | Description                                                                 | Default |
+|--------------|----------|-----------------------------------------------------------------------------|---------|
+| logLevel     | `String` | The minimum severity level to log. [See Log Levels](#log-levels)            | `info`
+| metadata     | `Object` | Any extra data you want included in your logging, like what service this is | `{}`
+| stderrLevels | `Array`  | Which log levels should be logged to `stderr` instead of `stdout`           | `[]`
 
 ```javascript
 const { createLogger } = require('node-logger');
@@ -67,3 +67,9 @@ This supports the following log levels, in order of decreasing severity:
 If you create a logger with the log level `info` (default), it will log all outputs that are at least an `info` level severity, which would be everything except `debug`.
 
 If you create a logger with the log level `error`, it will only log messages that are `error`, `crit`, `alert`, or `emerg`.
+
+## Local development
+
+To work on this locally, clone it and run `npm install`. You should be good to go.
+
+Be sure to read CONTRIBUTING.md for guidelines on contributing to this repo.
