@@ -3,6 +3,7 @@ on:
     branches:
       - master
       - main
+      - update-and-package
 
 name: release-please
 jobs:
