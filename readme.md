@@ -14,11 +14,11 @@ To install in your project, do `npm install github:glg/node-logger`.
 
 Params
 
-| Param | Type | Description | Default |
-|-|-|-|-|
-| logLevel | `String` | The minimum severity level to log. [See Log Levels](#log-levels) | `info`
-| metadata | `Object` | Any extra data you want included in your logging, like what service this is | `{}`
-| stderrLevels | `Array` | Which log levels should be logged to `stderr` instead of `stdout` | `[]`
+| Param        | Type     | Description                                                                 | Default |
+|--------------|----------|-----------------------------------------------------------------------------|---------|
+| logLevel     | `String` | The minimum severity level to log. [See Log Levels](#log-levels)            | `info`
+| metadata     | `Object` | Any extra data you want included in your logging, like what service this is | `{}`
+| stderrLevels | `Array`  | Which log levels should be logged to `stderr` instead of `stdout`           | `[]`
 
 ```javascript
 const { createLogger } = require('node-logger');
