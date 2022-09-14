@@ -4,7 +4,7 @@ This is a good default configuration of [winston](https://github.com/winstonjs/w
 
 ## Install
 
-To install in your project, do `npm install github:glg/node-logger`.
+To install in your project, do `npm install @glg/node-logger`.
 
 ## Usage
 
