@@ -1,6 +1,6 @@
 {
   "name": "@glg/node-logger",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Basic logger built on Winston",
   "main": "index.js",
   "scripts": {
