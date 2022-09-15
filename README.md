@@ -4,7 +4,7 @@ This is a good default configuration of [winston](https://github.com/winstonjs/w
 
 ## Install
 
-To install in your project, do `npm install github:glg/node-logger`.
+To install in your project, do `npm install @glg/node-logger`. [More detailed steps for installing, authenticating and using a GLG Private NPM Package can be found here.](https://github.com/glg/knowledgebase/discussions/56)
 
 ## Usage
 
@@ -21,7 +21,7 @@ Params
 | stderrLevels | `Array`  | Which log levels should be logged to `stderr` instead of `stdout`           | `[]`
 
 ```javascript
-const { createLogger } = require('node-logger');
+const { createLogger } = require('@glg/node-logger');
 
 const logger = createLogger('info', { service: 'my-service', component: 'index.js' });
 
@@ -35,16 +35,16 @@ logger.error('Some other message');
 ### Logging JSON (custom format)
 
 ```js
-const { createLogger, format } = require('node-logger');
+const { createLogger, format } = require('@glg/node-logger');
 
 const logger = createLogger(
-  'info', 
-  { service: 'catpants', sha: process.env.GITHUB_SHA }, 
-  [], 
+  'info',
+  { service: 'catpants', sha: process.env.GITHUB_SHA },
+  [],
   { format: format.json() },
 );
 
-logger.log({ 
+logger.log({
   level: 'warn',
   message: 'mayday',
 });
