@@ -4,7 +4,7 @@ This is a good default configuration of [winston](https://github.com/winstonjs/w
 
 ## Install
 
-To install in your project, do `npm install @glg/node-logger`.
+To install in your project, do `npm install @glg/node-logger`. [More detailed steps for installing, authenticating and using a GLG Private NPM Package can be found here.](https://github.com/glg/knowledgebase/discussions/56)
 
 ## Usage
 
@@ -38,13 +38,13 @@ logger.error('Some other message');
 const { createLogger, format } = require('node-logger');
 
 const logger = createLogger(
-  'info', 
-  { service: 'catpants', sha: process.env.GITHUB_SHA }, 
-  [], 
+  'info',
+  { service: 'catpants', sha: process.env.GITHUB_SHA },
+  [],
   { format: format.json() },
 );
 
-logger.log({ 
+logger.log({
   level: 'warn',
   message: 'mayday',
 });
