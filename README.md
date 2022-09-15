@@ -21,7 +21,7 @@ Params
 | stderrLevels | `Array`  | Which log levels should be logged to `stderr` instead of `stdout`           | `[]`
 
 ```javascript
-const { createLogger } = require('node-logger');
+const { createLogger } = require('@glg/node-logger');
 
 const logger = createLogger('info', { service: 'my-service', component: 'index.js' });
 
@@ -35,7 +35,7 @@ logger.error('Some other message');
 ### Logging JSON (custom format)
 
 ```js
-const { createLogger, format } = require('node-logger');
+const { createLogger, format } = require('@glg/node-logger');
 
 const logger = createLogger(
   'info',
